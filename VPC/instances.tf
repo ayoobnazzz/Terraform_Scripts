@@ -15,7 +15,7 @@ resource "aws_instance" "kubernetes_Server" {
 }
 # 2 Instance Of Redhat Servers(t2.micro)
 resource "aws_instance" "kubernetes_Workers" {
-  count                  = 2
+  count                  = 1
   ami                    = var.kubernetes_ami
   instance_type          = var.worker_instance_type
   vpc_security_group_ids = [aws_security_group.kubernetes_sg.id]
