@@ -23,7 +23,7 @@ variable "redhatami" {
   default = "ami-098f16afa9edf40be"
 }
 variable "key_name" {
-  default = "devops"
+  default = "devops1"
 }
 variable "master_instance_type" {
   default = "t2.medium"
