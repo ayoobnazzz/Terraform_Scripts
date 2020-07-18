@@ -16,7 +16,7 @@ variable "availability_zones" {
   type    = list(string)
   default = ["us-east-1a", "us-east-1b"]
 }
-variable "ubuntuami" {
+variable "kubernetes_ami" {
   default = "ami-0ac80df6eff0e70b5"
 }
 variable "redhatami" {
