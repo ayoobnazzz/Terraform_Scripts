@@ -10,5 +10,5 @@ variable "key_pair_name" {
   default = "DevOps"
 }
 variable "eks_node_instance_type" {
-  default = "t2.medium"
+  default = "t2.micro"
 }
