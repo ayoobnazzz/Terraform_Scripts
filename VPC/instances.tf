@@ -21,7 +21,6 @@ resource "aws_instance" "kubernetes_Workers" {
   vpc_security_group_ids = [aws_security_group.kubernetes_sg.id]
   subnet_id              = element(aws_subnet.kubernetes_subnets.*.id, count.index)
   key_name               = var.key_name
-  user_data              = file("init_script.sh")
   tags = {
     Name = "Kubernetes_Servers"
     Type = "kubernetes_Worker"
