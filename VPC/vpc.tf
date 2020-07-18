@@ -3,14 +3,14 @@ provider "aws" {
   region = "us-east-1"
 }
 # VPC
-resource "aws_vpc" "vpc" {
+resource "aws_vpc" "kubernetes" {
   cidr_block = var.vpc_cidr
   tags = {
     Name = "kubernetes"
   }
 }
 # IGW for demo_vpc
-resource "aws_internet_gateway" "vpc_igw" {
+resource "aws_internet_gateway" "kubernetes_vpc_igw" {
   vpc_id = aws_vpc.kubernetes.id
   tags = {
     Name = "kubernetes_vpc_igw"
@@ -18,7 +18,7 @@ resource "aws_internet_gateway" "vpc_igw" {
 }
 
 # Subenets in demo_vpc
-resource "aws_subnet" "subnets" {
+resource "aws_subnet" "kubernetes_subnets" {
   count                   = length(var.subnets_cidr)
   vpc_id                  = aws_vpc.kubernetes.id
   cidr_block              = element(var.subnets_cidr, count.index)
