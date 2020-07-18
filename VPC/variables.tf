@@ -3,7 +3,7 @@
  with your key name which  you have in given aws_region.
 */
 variable "aws_region" {
-  default = "ap-south-1"
+  default = "us-east-1"
 }
 variable "vpc_cidr" {
   default = "172.0.0.0/24"
@@ -14,14 +14,20 @@ variable "subnets_cidr" {
 }
 variable "availability_zones" {
   type    = list(string)
-  default = ["ap-south-1a", "ap-south-1b"]
+  default = ["us-east-1a", "us-east-1b"]
 }
 variable "ubuntuami" {
-  default = "ami-0b44050b2d893d5f7"
+  default = "ami-0ac80df6eff0e70b5"
 }
 variable "redhatami" {
-  default = "ami-052c08d70def0ac62"
+  default = "ami-098f16afa9edf40be"
 }
 variable "key_name" {
   default = "devops"
+}
+variable "master_instance_type" {
+  default = "t2.medium"
+}
+variable "worker_instance_type" {
+  default = "t2.micro"
 }
