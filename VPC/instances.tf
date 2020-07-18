@@ -23,7 +23,8 @@ resource "aws_instance" "kubernetes_Workers" {
   key_name               = var.key_name
   user_data              = file("init_script.sh")
   tags = {
-    Name = "Redhat_Server_${count.index + 1}"
+    Name = "Kubernetes_Servers"
+    Type = "kubernetes_Worker"
   }
 
 
